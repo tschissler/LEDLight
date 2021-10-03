@@ -45,27 +45,30 @@
 </head>
 
 <body>
-<h1>LED Light UI</h1>
-<p>
-    <button onclick="On()">On</button>
-    <button onclick="Off()">Off</button>
-</p>
+
 <div class="container">
     <div class="row">
+        <h1>LED Light UI</h1>
+        <p>
+            <button type="button" onclick="On()" class="btn btn-primary btn-lg">On</button>
+            <button type="button" onclick="Off()" class="btn btn-secondary btn-lg">Off</button>
+        </p>
+    </div>
+    <div class="row">
         <div class="col-3">Red:</div>
-        <div class="col-9"><input id="red" type="range" min="0" max="255" step="1" value="255" onchange="UpdateRed(this.value)" /></div>
+        <div class="col-9"><input id="red" type="range" min="0" max="255" step="1" value="255" onchange="UpdateRed(this.value)"/></div>
     </div>
     <div class="row">
         <div class="col-3">Green:</div>
-        <div class="col-9"><input id="green" type="range" min="0" max="255" step="1" value="255" onchange="UpdateGreen(this.value)" /></div>
+        <div class="col-9"><input id="green" type="range" min="0" max="255" step="1" value="255" onchange="UpdateGreen(this.value)"/></div>
     </div>
     <div class="row">
         <div class="col-3">Blue:</div>
-        <div class="col-9"><input id="blue" type="range" min="0" max="255" step="1" value="255" onchange="UpdateBlue(this.value)" /></div>
+        <div class="col-9"><input id="blue" type="range" min="0" max="255" step="1" value="255" onchange="UpdateBlue(this.value)"/></div>
     </div>
     <div class="row">
         <div class="col-3">Brightness:</div>
-        <div class="col-9"><input id="brightness" type="range" min="0" max="255" step="1" value="255" onchange="UpdateBrightness(this.value)" /></div>
+        <div class="col-9"><input id="brightness" type="range" min="0" max="255" step="1" value="255" onchange="UpdateBrightness(this.value)"/></div>
     </div>
 </div>
 </body>

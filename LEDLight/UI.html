@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LED Light</title>
+    <script language='javascript'>
+        baseURL = "http://192.168.178.36";
+        red = 255;
+        green = 255;
+        blue = 255;
+        brightness = 255;
+
+        function On() {
+            fetch(baseURL + '/on');
+        }
+        function Off() {
+            fetch(baseURL + '/off');
+        }
+
+        function UpdateRed(newRed) {
+            red = newRed;
+            UpdateColor();
+        }
+
+        function UpdateGreen(newGreen) {
+            green = newGreen;
+            UpdateColor();
+        }
+
+        function UpdateBlue(newBlue) {
+            blue = newBlue;
+            UpdateColor();
+        }
+
+        function UpdateBrightness(newBrightness) {
+            brightness = newBrightness;
+            UpdateColor();
+        }
+
+        function UpdateColor () {
+            fetch(baseURL + '/color:' + red + "-" + green + "-" + blue + "-" + brightness);
+        }
+    </script>
+</head>
+
+<body>
+<h1>Test</h1>
+<p>
+    <button onclick="On()">On</button>
+    <button onclick="Off()">Off</button>
+</p>
+<p>
+    Red: <input id="red" type="range" min="0" max="255" step="1" value="255" onchange="UpdateRed(this.value)" /><br />
+    Green: <input id="green" type="range" min="0" max="255" step="1" value="255" onchange="UpdateGreen(this.value)" /><br />
+    Blue: <input id="blue" type="range" min="0" max="255" step="1" value="255" onchange="UpdateBlue(this.value)" /><br />
+    Brightness: <input id="brightness" type="range" min="0" max="255" step="1" value="255" onchange="UpdateBrightness(this.value)" /><br />
+
+</p>
+</body>
+</html>

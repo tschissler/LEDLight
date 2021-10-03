@@ -79,8 +79,9 @@ namespace LEDLight
             }
             else
             {
-                WebServer.OutPutStream(e.Context.Response, "<script language='javascript'><h1>Test</h1><button onclick=>On</button><button>Off</button>");
-
+                var htmlContent = Resources.GetString(Resources.StringResources.UI);
+                //WebServer.SendFileOverHTTP(e.Context.Response, "UI.html", ((byte[])(nanoFramework.Runtime.Native.ResourceUtility.GetObject(Resources.ResourceManager, Resources.StringResources.UI))));
+                WebServer.OutPutStream(e.Context.Response, htmlContent);
             }
         }
 
